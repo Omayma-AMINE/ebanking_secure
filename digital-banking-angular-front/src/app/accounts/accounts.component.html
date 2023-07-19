@@ -53,10 +53,10 @@
         </div>
       </div>
     </div>
-    <div class="col col-md-6">
+    <div class="col col-md-6" *ngIf="this.authService.roles.includes('ADMIN')">
       <div class="card" *ngIf="accountObservable">
         <div class="card-header">Operations</div>
-        <div class="card-body">
+        <div class="card-body" >
 
           <form [formGroup]="operationFromGroup" (ngSubmit)="handleAccountOperation()" method="post">
             <div class="form-check form-check-inline">
